@@ -36,6 +36,18 @@ namespace API
             //obtinere acces la extensia pentru IServiceCollection
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(opt =>
+            {
+                //se specifică aplicației clientului că, 
+                //dacă rulează pe un port nesigur, 
+                //nu va fi returnat un antet care sa permite browserului 
+                // să afișeze aceste informații
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins
+                    ("https://loacalhost:4200");
+                });
+            });
             
         }
 
@@ -47,6 +59,7 @@ namespace API
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseCors("CorsPolicy");
             app.UseAuthorization();
             // Swagger va permite navigarea la o pagină web, 
             // care va afișa toate punctele noastre finale API

@@ -1,7 +1,7 @@
 [
   {
     "Name": "Angular Speedster Board 2000",
-    "Description": "You can say it's all right But I know that you're breaking up insideI see it in your eyes Even you face the night.",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 200,
     "PictureUrl": "images/products/sb-ang1.png",
     "ProductTypeId": 1,
@@ -25,7 +25,7 @@
   },
   {
     "Name": "Net Core Super Board",
-    "Description": "You can say it's all right But I know that you're breaking up insideI see it in your eyes Even you face the night.",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 300,
     "PictureUrl": "images/products/sb-core2.png",
     "ProductTypeId": 1,
