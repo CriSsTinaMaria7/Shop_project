@@ -23,12 +23,16 @@ namespace Infrastructure.Data
             {
                 query = query.OrderByDescending(spec.OrderByDescending);
             }
-            query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
             
+            // verificam daca dorim sa aplicam paginarea
             if(spec.IsPagingEnabled)
             {
+                //limitam afisarea produselor: waht we skip and what we take
                 query = query.Skip(spec.Skip).Take(spec.Take);
             }
+            
+            query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
+            
             return query;
         }
         

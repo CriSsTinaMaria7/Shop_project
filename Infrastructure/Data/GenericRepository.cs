@@ -39,15 +39,16 @@ namespace Infrastructure.Data
            return await ApplySpecification(spec).ToListAsync();
         }
 
-        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
-        {
-             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
-        }
-
         public async Task<int> CountAsync(ISpecification<T> spec)
         {
             // pentru obtinerea numarului de rezultate
             return await ApplySpecification(spec).CountAsync();
         }
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
+        }
+
+        
     }
 }

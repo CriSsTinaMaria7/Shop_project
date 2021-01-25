@@ -2,8 +2,9 @@ namespace Core.Specifications
 {
     public class ProductSpecParams
     {    private const  int MaxPageSize = 50;
-        // am setat în mod implicit prima pagina
+        // in mod implicit va fi returnata prima pagina
         public int PageIndex {get;set;} = 1;
+        // clientul poate deasi acest maximul de 6
         private int _pageSize = 6;
         public int PageSize 
         {
