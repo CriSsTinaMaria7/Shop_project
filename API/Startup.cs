@@ -44,8 +44,10 @@ namespace API
                 // să afișeze aceste informații
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins
-                    ("https://loacalhost:4200");
+                    policy
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .WithOrigins("https://loacalhost:4200");
                 });
             });
             
@@ -68,6 +70,8 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+           
+
         }
     }
 }
